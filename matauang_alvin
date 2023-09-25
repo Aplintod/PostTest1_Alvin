@@ -1,0 +1,38 @@
+print("-"*40)
+print("Silahkan Login")
+print("-"*40)
+Nama = input("Nama : ")
+Nim = int(input("NIM : "))
+Kelas = input("Kelas (A/B) : ")
+
+def konversi_rupiah_ke_usd(amount):
+    return amount / 14500  # Nilai tukar 1 USD = 14,500 IDR
+
+def konversi_rupiah_ke_yen(amount):
+    return amount / 130  # Nilai tukar 1 Yen = 130 IDR
+
+def konversi_rupiah_ke_myr(amount):
+    return amount / 3500  # Nilai tukar 1 MYR = 3,500 IDR
+
+print("-"*40)
+print("Konversi Mata Uang!")
+print("-"*40)
+amount = int(input("Masukkan jumlah Rupiah yang ingin dikonversikan: "))
+print("Pilih mata uang yang ingin dikonversikan:")
+print("1. USD (Dolar Amerika)")
+print("2. Yen (Yen Jepang)")
+print("3. MYR (Ringgit Malaysia)")
+choice = int(input("Masukkan pilihan (1/2/3): "))
+
+if choice == 1:
+    result = konversi_rupiah_ke_usd(amount)
+    print(f"{amount} IDR setara dengan {result:.2f} USD")
+elif choice == 2:
+    result = konversi_rupiah_ke_yen(amount)
+    print(f"{amount} IDR setara dengan {result:.2f} Yen")
+elif choice == 3:
+    result = konversi_rupiah_ke_myr(amount)
+    print(f"{amount} IDR setara dengan {result:.2f} MYR")
+else:
+    print("Pilihan tidak valid!")
+    exit()
